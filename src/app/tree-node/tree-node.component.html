@@ -1,0 +1,8 @@
+<div *ngFor="let node of nodes | keyvalue; trackBy:trackByFn">
+    <ul>
+        <li>
+            {{ node.key }} <input *ngIf="isString(node.value)" [(ngModel)]="nodes[node.key]" [name]="node.key" />
+            <app-tree-node [nodes]="node.value" *ngIf="node.value"></app-tree-node>
+        </li>
+    </ul>
+</div>
